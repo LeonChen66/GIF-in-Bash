@@ -5,9 +5,19 @@ import os
 import imageio
 import time
 from subprocess import call
-
-
-size = 48
+import argparse
+parser = argparse.ArgumentParser(description='Optional app description')
+parser.add_argument('-f', '--filename', type=str,
+                    help='input the GIF filename')
+parser.add_argument('-s', '--size', type=int,
+                    help='Output size', default=54)
+parser.add_argument('-t', '--threshold', type=int,
+                    help='Color mapping threshold', default=128)
+parser.add_argument('-q', '--freq', type=float,
+                    help='Frequency of GIF', default=0.2)
+args = parser.parse_args()
+size = args.size
+timeout = args.freq
 def trans_color(img,threshold=150):
     #img = cv2.imread(filename)
     img = cv2.resize(img, (size, size), interpolation=cv2.INTER_CUBIC)
@@ -58,13 +68,15 @@ def clear():
     _ = call('clear' if os.name == 'posix' else 'cls')
 
 def main():
-    gif = imageio.mimread('sim.gif')
+
+    gif = imageio.mimread(args.filename)
+
     imgs = [cv2.cvtColor(img, cv2.COLOR_RGB2BGR) for img in gif]
     #img = cv2.imread('butter.jpg')
     while 1:
         for img in imgs:
-            output = trans_color(img,threshold=128)
-            time.sleep(.200)
+            output = trans_color(img,args.threshold)
+            time.sleep(timeout)
             generate(output)
 
 if __name__ == "__main__":

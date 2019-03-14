@@ -5,7 +5,9 @@
 
 ##### Usage: Run " python GIF_bash.py -f 'GIF/sim.gif' " in bash
 <img src="https://imgur.com/eSVAhZ8.gif">
+
 ##### &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;GIF in bash     &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Original GIF
+
 <p> 
     <img src="https://i.imgur.com/QaXuaUF.gif" width="200" height="200">
         <img src="https://media.tenor.com/images/0a1652de311806ce55820a7115993853/tenor.gif">
